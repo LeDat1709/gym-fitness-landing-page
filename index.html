@@ -6,6 +6,9 @@
     <title>PowerGym - Unleash Your Hidden Strength</title>
     <meta name="description" content="Modern gym with European equipment, open 24/7, professional PT team. Sign up for a free trial today!">
     
+    <!-- Preload critical resources -->
+    <link rel="preload" href="https://hzdxzgvorpzkmohpnsog.supabase.co/storage/v1/object/public/landinggym/anastase-maragos-7kEpUPB8vNk-unsplash.jpg" as="image" fetchpriority="high">
+    
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -31,6 +34,7 @@
                     <li><a href="#pricing">Plans</a></li>
                     <li><a href="#trainers">Trainers</a></li>
                     <li><a href="#contact">Contact</a></li>
+                    <li class="mobile-cta"><a href="#contact" class="mobile-cta-link">JOIN NOW</a></li>
                 </ul>
                 
                 <button class="cta-btn">JOIN NOW</button>
@@ -42,17 +46,22 @@
                 </div>
             </div>
         </nav>
+        <div class="mobile-overlay"></div>
     </header>
 
     <!-- Hero Section -->
     <section class="hero">
         <div class="hero-bg">
-            <img src="https://hzdxzgvorpzkmohpnsog.supabase.co/storage/v1/object/public/landinggym/anastase-maragos-7kEpUPB8vNk-unsplash.jpg" alt="Gym Hero">
+            <img 
+                src="https://hzdxzgvorpzkmohpnsog.supabase.co/storage/v1/object/public/landinggym/anastase-maragos-7kEpUPB8vNk-unsplash.jpg" 
+                alt="Gym Hero"
+                loading="eager"
+                fetchpriority="high">
             <div class="hero-overlay"></div>
         </div>
         
         <div class="container">
-            <div class="hero-content" data-aos="fade-up"></div>
+            <div class="hero-content" data-aos="fade-up">
                 <h1 class="hero-title">UNLEASH YOUR<br><span class="accent">HIDDEN STRENGTH</span></h1>
                 <p class="hero-subtitle">Transform your dreams into reality with modern equipment and professional trainers</p>
                 <button class="hero-cta">START FREE TRIAL</button>
@@ -170,7 +179,10 @@
             <div class="trainers-grid">
                 <div class="trainer-card" data-aos="fade-up" data-aos-delay="100">
                     <div class="trainer-image">
-                        <img src="https://hzdxzgvorpzkmohpnsog.supabase.co/storage/v1/object/public/landinggym/Trainer/mediamodifier-m6Hw3FybWPA-unsplash.jpg" alt="Mike Johnson">
+                        <img 
+                            src="https://hzdxzgvorpzkmohpnsog.supabase.co/storage/v1/object/public/landinggym/Trainer/mediamodifier-m6Hw3FybWPA-unsplash.jpg" 
+                            alt="Mike Johnson"
+                            loading="lazy">
                     </div>
                     <div class="trainer-info">
                         <h3>Mike Johnson</h3>
@@ -182,7 +194,10 @@
                 
                 <div class="trainer-card" data-aos="fade-up" data-aos-delay="200">
                     <div class="trainer-image">
-                        <img src="https://hzdxzgvorpzkmohpnsog.supabase.co/storage/v1/object/public/landinggym/Trainer/big-dodzy-_ASiToF-faI-unsplash.jpg" alt="Sarah Williams">
+                        <img 
+                            src="https://hzdxzgvorpzkmohpnsog.supabase.co/storage/v1/object/public/landinggym/Trainer/big-dodzy-_ASiToF-faI-unsplash.jpg" 
+                            alt="Sarah Williams"
+                            loading="lazy">
                     </div>
                     <div class="trainer-info">
                         <h3>Sarah Williams</h3>
@@ -194,7 +209,10 @@
                 
                 <div class="trainer-card" data-aos="fade-up" data-aos-delay="300">
                     <div class="trainer-image">
-                        <img src="https://hzdxzgvorpzkmohpnsog.supabase.co/storage/v1/object/public/landinggym/Trainer/george-dagerotip-mYaf3lj2Vs8-unsplash.jpg" alt="David Chen">
+                        <img 
+                            src="https://hzdxzgvorpzkmohpnsog.supabase.co/storage/v1/object/public/landinggym/Trainer/george-dagerotip-mYaf3lj2Vs8-unsplash.jpg" 
+                            alt="David Chen"
+                            loading="lazy">
                     </div>
                     <div class="trainer-info">
                         <h3>David Chen</h3>
@@ -206,7 +224,10 @@
                 
                 <div class="trainer-card" data-aos="fade-up" data-aos-delay="400">
                     <div class="trainer-image">
-                        <img src="https://hzdxzgvorpzkmohpnsog.supabase.co/storage/v1/object/public/landinggym/Trainer/timothy-yiadom-6nvQoVsiPI4-unsplash.jpg" alt="Jessica Martinez">
+                        <img 
+                            src="https://hzdxzgvorpzkmohpnsog.supabase.co/storage/v1/object/public/landinggym/Trainer/timothy-yiadom-6nvQoVsiPI4-unsplash.jpg" 
+                            alt="Jessica Martinez"
+                            loading="lazy">
                     </div>
                     <div class="trainer-info">
                         <h3>Jessica Martinez</h3>
@@ -227,21 +248,30 @@
             
             <div class="gallery-grid">
                 <div class="gallery-item" data-aos="zoom-in" data-aos-delay="100">
-                    <img src="https://hzdxzgvorpzkmohpnsog.supabase.co/storage/v1/object/public/landinggym/ambitious-studio-rick-barrett-1RNQ11ZODJM-unsplash.jpg" alt="Modern gym equipment">
+                    <img 
+                        src="https://hzdxzgvorpzkmohpnsog.supabase.co/storage/v1/object/public/landinggym/ambitious-studio-rick-barrett-1RNQ11ZODJM-unsplash.jpg" 
+                        alt="Modern gym equipment"
+                        loading="lazy">
                     <div class="gallery-overlay">
                         <h3>Modern Equipment</h3>
                     </div>
                 </div>
                 
                 <div class="gallery-item" data-aos="zoom-in" data-aos-delay="200">
-                    <img src="https://hzdxzgvorpzkmohpnsog.supabase.co/storage/v1/object/public/landinggym/humphrey-m-LOA2mTj1vhc-unsplash.jpg" alt="Cardio zone">
+                    <img 
+                        src="https://hzdxzgvorpzkmohpnsog.supabase.co/storage/v1/object/public/landinggym/humphrey-m-LOA2mTj1vhc-unsplash.jpg" 
+                        alt="Cardio zone"
+                        loading="lazy">
                     <div class="gallery-overlay">
                         <h3>Cardio Zone</h3>
                     </div>
                 </div>
                 
                 <div class="gallery-item" data-aos="zoom-in" data-aos-delay="300">
-                    <img src="https://hzdxzgvorpzkmohpnsog.supabase.co/storage/v1/object/public/landinggym/sven-mieke-MsCgmHuirDo-unsplash.jpg" alt="Free weights area">
+                    <img 
+                        src="https://hzdxzgvorpzkmohpnsog.supabase.co/storage/v1/object/public/landinggym/sven-mieke-MsCgmHuirDo-unsplash.jpg" 
+                        alt="Free weights area"
+                        loading="lazy">
                     <div class="gallery-overlay">
                         <h3>Free Weights Area</h3>
                     </div>
@@ -261,7 +291,10 @@
                         <p>"After 6 months at PowerGym, I lost 33 lbs and achieved my dream body. The PT team is incredibly professional!"</p>
                     </div>
                     <div class="testimonial-author">
-                        <img src="https://hzdxzgvorpzkmohpnsog.supabase.co/storage/v1/object/public/landinggym/scott-webb-U5kQvbQWoG0-unsplash.jpg" alt="Emily Johnson">
+                        <img 
+                            src="https://hzdxzgvorpzkmohpnsog.supabase.co/storage/v1/object/public/landinggym/scott-webb-U5kQvbQWoG0-unsplash.jpg" 
+                            alt="Emily Johnson"
+                            loading="lazy">
                         <div class="author-info">
                             <h4>Emily Johnson</h4>
                             <span>28 years old - Accountant</span>
@@ -274,7 +307,10 @@
                         <p>"Modern equipment, spacious environment. The 24/7 access is perfect for my work schedule."</p>
                     </div>
                     <div class="testimonial-author">
-                        <img src="https://hzdxzgvorpzkmohpnsog.supabase.co/storage/v1/object/public/landinggym/sour-moha-_cUZkx0wTyM-unsplash.jpg" alt="Robert Smith">
+                        <img 
+                            src="https://hzdxzgvorpzkmohpnsog.supabase.co/storage/v1/object/public/landinggym/sour-moha-_cUZkx0wTyM-unsplash.jpg" 
+                            alt="Robert Smith"
+                            loading="lazy">
                         <div class="author-info">
                             <h4>Robert Smith</h4>
                             <span>35 years old - Engineer</span>

@@ -57,22 +57,40 @@ const initAOS = () => {
 const initNavigation = () => {
     const hamburger = $(SELECTORS.hamburger);
     const navMenu = $(SELECTORS.navMenu);
+    const overlay = $('.mobile-overlay');
     
     if (!hamburger || !navMenu) return;
 
     // Toggle mobile menu
-    hamburger.addEventListener('click', () => {
+    const toggleMenu = () => {
         hamburger.classList.toggle('active');
         navMenu.classList.toggle('active');
-    });
+        if (overlay) overlay.classList.toggle('active');
+        
+        // Prevent body scroll when menu is open
+        if (navMenu.classList.contains('active')) {
+            document.body.style.overflow = 'hidden';
+        } else {
+            document.body.style.overflow = '';
+        }
+    };
+
+    hamburger.addEventListener('click', toggleMenu);
 
     // Close menu on link click
     $$(SELECTORS.navLinks).forEach(link => {
         link.addEventListener('click', () => {
             hamburger.classList.remove('active');
             navMenu.classList.remove('active');
+            if (overlay) overlay.classList.remove('active');
+            document.body.style.overflow = '';
         });
     });
+    
+    // Close menu when clicking overlay
+    if (overlay) {
+        overlay.addEventListener('click', toggleMenu);
+    }
 };
 
 const initSmoothScroll = () => {
