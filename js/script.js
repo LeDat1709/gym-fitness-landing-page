@@ -47,7 +47,8 @@ const initAOS = () => {
         duration: CONFIG.ANIMATION_DURATION,
         easing: 'ease-in-out',
         once: true,
-        offset: CONFIG.SCROLL_OFFSET
+        offset: CONFIG.SCROLL_OFFSET,
+        disable: false
     });
 };
 
@@ -266,15 +267,26 @@ const initScrollToTop = () => {
 // LAZY LOADING
 // ============================================
 const initLazyLoading = () => {
-    const images = $$('img[data-src]');
+    const images = $$('img[loading="lazy"]');
     if (images.length === 0) return;
 
     const imageObserver = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
                 const img = entry.target;
-                img.src = img.dataset.src;
-                img.classList.remove('lazy');
+                
+                // Add error handling
+                img.addEventListener('error', function() {
+                    console.warn('Failed to load image:', this.src);
+                    this.style.display = 'block';
+                    this.style.background = 'var(--gray-dark)';
+                });
+                
+                // Add load success handler
+                img.addEventListener('load', function() {
+                    this.style.opacity = '1';
+                });
+                
                 imageObserver.unobserve(img);
             }
         });
@@ -287,6 +299,8 @@ const initLazyLoading = () => {
 // MAIN INITIALIZATION
 // ============================================
 const init = () => {
+    console.log('🚀 Initializing PowerGym website...');
+    
     // Core features
     initAOS();
     initNavigation();
@@ -297,6 +311,23 @@ const init = () => {
     initContactForm();
     initScrollToTop();
     initLazyLoading();
+    
+    // Check images
+    const allImages = $$('img');
+    console.log(`📸 Total images found: ${allImages.length}`);
+    
+    allImages.forEach((img, index) => {
+        if (img.complete) {
+            console.log(`✓ Image ${index + 1} already loaded:`, img.alt);
+        } else {
+            img.addEventListener('load', () => {
+                console.log(`✓ Image ${index + 1} loaded:`, img.alt);
+            });
+            img.addEventListener('error', () => {
+                console.error(`✗ Image ${index + 1} failed:`, img.alt, img.src);
+            });
+        }
+    });
     
     console.log('PowerGym website loaded successfully! 💪');
 };

@@ -511,6 +511,19 @@ section {
 .trainer-image {
     height: 300px;
     overflow: hidden;
+    background: var(--gray-dark);
+    position: relative;
+}
+
+.trainer-image::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, rgba(255, 215, 0, 0.1) 0%, rgba(255, 107, 53, 0.1) 100%);
+    z-index: 1;
 }
 
 .trainer-image img {
@@ -519,6 +532,8 @@ section {
     object-fit: cover;
     object-position: center top;
     transition: transform var(--transition-medium);
+    position: relative;
+    z-index: 2;
 }
 
 .trainer-card:hover .trainer-image img {
@@ -573,6 +588,7 @@ section {
     border-radius: var(--border-radius);
     overflow: hidden;
     cursor: pointer;
+    background: var(--gray-dark);
 }
 
 .gallery-item img {
@@ -581,6 +597,7 @@ section {
     object-fit: cover;
     object-position: center;
     transition: transform var(--transition-medium);
+    display: block;
 }
 
 .gallery-overlay {
